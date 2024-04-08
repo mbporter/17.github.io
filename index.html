@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Crafts</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+</head>
+<body>
+    <h1>Crafts n' Stuff!</h1>
+    <div id="craft-list"></div>
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 id="craft-name"></h2>
+            <img id="craft-image" src="" alt="Craft Image">
+            <div id="craft-description"></div>
+            <form id="craft-form" onsubmit="saveCraft(event)">
+                <label for="name">Craft Name:</label><br>
+                <input type="text" id="name" name="name" required><br>
+                <label for="description">Description:</label><br>
+                <textarea id="description" name="description" required></textarea><br>
+                <label for="image">Craft Image:</label><br>
+                <input type="file" id="image" name="image" accept="image/*" onchange="previewImage(event)" required><br>
+                <img id="preview-image" src="" alt="Preview Image"><br>
+                <button type="button" onclick="addSupply()">Add Supply</button><br>
+                <div id="supply-container"></div>
+                <button type="submit">Save</button>
+                <button type="button" onclick="closeModal()">Cancel</button>
+            </form>
+            <button id="edit-button" style="display: none;" onclick="toggleEditMode()">Edit</button>
+        </div>
+    </div>
