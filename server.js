@@ -15,7 +15,7 @@ res.sendFile(__dirname + "/index.html");
 const upload = multer({ dest: __dirname + "/public/images" });
 
 mongoose
-    .connect("mongodb+srv://Mbporter:Darcy123123@cluster0.sefh4en.mongodb.net/?retryWrites=true&w=majority")
+    .connect("mongodb+srv://Mbporter:Darcy123123@cluster0.sefh4en.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
     .then(() => {
     console.log("connected to mongodb");
     })
@@ -292,7 +292,6 @@ app.delete("/api/albums/:id", (req, res) => {
 app.use((err, req, res, next) => {
     console.error(err.stack);
 
-    // Send the error details to the client
     res.status(500).send('Something went wrong!');
 });
 
